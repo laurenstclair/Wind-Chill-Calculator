@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500&family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1 style="color: #DB9D47;">Wind Chill Calculator </h1>
+        <img src="images/Cloud_Emoji.png" alt="Cloud emoji">
+        <h4 class="about">It is often misunderstood how wind chill is calculated, yet wind chill plays a significant
+            role in weather perception. Wind chill is calculated using the wind speed and actual temperature to find the perceieved temperature. 
+        </h4>
+    </header>
+
+    <section class="main">
+        <div class="wrapper">
+            <div class="about">
+                <h5 style="color: #1C5D99;"> To calculate the wind chill, enter the actual temperature (Air Temp.) and wind speed (Wind Speed). 
+                    The calculation can be performed in Metric or Imperial as controlled by the slider. The following <a href="https://sciencing.com/calculate-wind-chill-factor-5981683.html" target="_blank">article</a> was referenced
+                    for the calcuations of wind chill in Metric and Imperial. 
+                </h5>
+            </div>
+            <div class="main-grid"> 
+                <div class="column">
+                    <label class="switch">
+                        <input type="checkbox" id="scaleCheckbox" onClick="changeText()">
+                        <span class="slider"></span>
+                    </label>
+                    <h2 id="scale">Metric</h2>
+                </div>
+                <div class="column">
+                    <h2>Air Temp.</h2>
+                    <h3 id="scale-temp">°C</h3>
+                    <label for="temp">
+                        <input class="user-input" type="text" id="temp" placeholder="Enter the temperature">
+                    </label>
+                </div>
+                <div class="column">
+                    <h2>Wind Speed</h2>
+                    <h3 id="scale-speed">kph</h3>
+                    <label for="windspeed">
+                        <input class="user-input" type="text" id="windspeed" placeholder="Enter the wind speed">
+                    </label>
+                </div>
+                <div class="column">
+                    <h2>Wind Chill: <br>
+                        <span id="result">It will feel like </span>
+                    </h2>
+                </div>
+                <input class="calculate-button" type="button" onClick="calculateWindchill(); validateFields()" Value="Calculate" />
+            </div>
+        </div>
+    </section>
+
+<script src="js/scripts.js"></script>
+
+</body>
+</html>
