@@ -24,12 +24,16 @@ function validateFields() {
     var windSpeed = document.getElementById("windspeed").value;
     var temperature = document.getElementById("temp").value;
 
-    if (windSpeed == "" || windSpeed == null) {
-        alert("Please enter both the temperature and wind speed to calculate the wind chill.");
+    if ((windSpeed == "" || windSpeed == null) && (temperature == "" || temperature == null)) {
+        alert("Please enter both the wind speed and temperature to calculate the wind chill.");
         return false;
     }
     else if (temperature == "" || temperature == null) {
-        alert("Please enter both the temperature and wind speed to calculate the wind chill.");
+        alert("Please enter the temperature to calculate the wind chill.");
+        return false;
+    }
+    else if (windSpeed == "" || windSpeed == null) {
+        alert("Please enter the wind speed to calculate the wind chill.");
         return false;
     }
 }
